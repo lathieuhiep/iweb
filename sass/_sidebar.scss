@@ -1,0 +1,103 @@
+aside {
+  margin-bottom: 30px;
+}
+aside .widget-title {
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+aside ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+aside ul li {
+  border-bottom: 1px solid #eee;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+aside ul li a {
+  display: block;
+}
+aside ul li a:hover {
+  padding-left: 10px;
+}
+aside ul li ul.children {
+  padding-left: 15px;
+}
+aside ul li ul.children li {
+  border-bottom: 0;
+}
+aside select {
+  width: 100%;
+  padding: 9px 10px;
+  font-size: 12px;
+}
+aside.widget_archive ul li a,
+aside.widget_categories ul li a {
+  display: inline-block;
+  margin-right: 5px;
+}
+aside.widget_calendar table {
+  width: 100%;
+}
+aside.widget_calendar table caption {
+  padding: 0;
+  margin-bottom: 15px;
+  text-align: center;
+}
+aside.widget_calendar table tr {
+  border-bottom: 1px solid #eeeeee;
+}
+aside.widget_calendar table tr th {
+  text-align: center;
+}
+aside.widget_calendar table tr td {
+  padding: 5px 0;
+  text-align: center;
+}
+aside.widget_calendar table tr td#today {
+  background-color: #ff5555;
+  color: #ffffff;
+}
+aside.widget_calendar table tr td#today a {
+  color: #ffffff;
+}
+aside.widget_calendar table tr td#prev {
+  text-align: left;
+}
+aside.widget_calendar table tr td#next {
+  text-align: right;
+}
+aside.widget_rss ul li {
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+aside.widget_rss ul li .rssSummary {
+  font-size: 12px;
+}
+.search-form {
+  font-size: 12px;
+}
+.search-field {
+  border: 1px solid #eaeaea;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  box-shadow: none;
+  height: auto;
+  padding: 9px 10px;
+}
+.search-submit {
+  background-color: #ff5555;
+  color: #fff;
+  padding: 9px 10px;
+  border: none;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}

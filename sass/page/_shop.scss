@@ -1,0 +1,114 @@
+/* ## Shop Woocommerce */
+.site-shop {
+  padding: 50px 0;
+}
+.site-shop__result-count-ordering {
+  margin-bottom: 30px;
+}
+.woocommerce .site-post-item {
+  border-bottom: none;
+}
+.woocommerce .woocommerce-result-count {
+  float: none;
+  margin: 0;
+}
+.woocommerce .woocommerce-ordering {
+  float: none;
+  margin: 0;
+}
+.woocommerce .woocommerce-ordering select {
+  padding: 5px 10px;
+  border: 1px solid #eeeeee;
+}
+.woocommerce ul.products {
+  margin: 0 -15px;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+}
+.woocommerce ul.products li.first {
+  clear: none;
+}
+.woocommerce ul.products li.product {
+  margin: 0 0 15px;
+  float: none;
+  padding: 0 15px;
+  width: 25%;
+}
+.woocommerce ul.products li.product .price del {
+  display: inline-block;
+}
+.woocommerce ul.products li.product .price ins {
+  display: inline-block;
+  text-decoration: none;
+}
+.woocommerce ul.products li.product .button {
+  padding: 8px 10px;
+  line-height: inherit;
+  background-color: #ff5555;
+  color: #ffffff;
+  font-weight: 400;
+  border: none;
+}
+.woocommerce nav.woocommerce-pagination {
+  margin-top: 30px;
+}
+.woocommerce nav.woocommerce-pagination ul {
+  margin: 0;
+  border: none;
+  display: block;
+}
+.woocommerce nav.woocommerce-pagination ul li {
+  display: inline-block;
+  float: none;
+  border: none;
+}
+.woocommerce nav.woocommerce-pagination ul li span,
+.woocommerce nav.woocommerce-pagination ul li a {
+  display: block;
+  cursor: pointer;
+  border: 1px solid #ddd;
+  padding: 5px 12px;
+  line-height: inherit;
+  min-width: inherit;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+}
+.woocommerce nav.woocommerce-pagination ul li a:focus {
+  background-color: transparent;
+  color: #333;
+}
+.woocommerce nav.woocommerce-pagination ul li span.current,
+.woocommerce nav.woocommerce-pagination ul li a:hover {
+  color: #fff;
+  background: #ff5555;
+  border-color: #ff5555;
+}
+.woocommerce .site-shop-single .site-shop-single__warp {
+  margin: 0 -15px 30px;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+}
+.woocommerce .site-shop-single div.product .site-shop-single__gallery-box {
+  width: 50%;
+  padding: 0 15px;
+  position: relative;
+}
+.woocommerce .site-shop-single div.product div.images {
+  float: none;
+  width: 100%;
+  margin: 0;
+}
+.woocommerce .site-shop-single div.product div.summary {
+  float: none;
+  width: 50%;
+  padding: 0 15px;
+  margin: 0;
+}
+.pswp__bg {
+  background-color: rgba(0, 0, 0, 0.9);
+}

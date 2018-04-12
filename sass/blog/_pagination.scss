@@ -1,0 +1,31 @@
+/* ## Pagination */
+.pagination {
+  display: block;
+  float: none;
+  text-align: center;
+}
+.page-numbers {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.page-numbers li {
+  display: inline-block;
+}
+.page-numbers li span,
+.page-numbers li a {
+  display: block;
+  cursor: pointer;
+  border: 1px solid #ddd;
+  padding: 5px 12px;
+  position: relative;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+}
+.page-numbers li span.current,
+.page-numbers li a:hover {
+  color: #fff;
+  background: #ff5555;
+  border-color: #ff5555;
+}

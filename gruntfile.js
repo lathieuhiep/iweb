@@ -2,10 +2,13 @@
 module.exports = grunt => {
 	grunt.initConfig({
 		sass: {
+            options: {
+                outputStyle: 'expanded'
+            },
 			compile: {
 				files: {
-					'test/tmp/compile.css': 'test/fixtures/test.scss',
-					'test/tmp/compile2.css': 'test/fixtures/test.scss'
+					'iweb/style.css': 'sass/style.scss',
+					// 'test/tmp/compile2.css': 'test/fixtures/imported.scss'
 				}
 			},
 			includePaths: {
