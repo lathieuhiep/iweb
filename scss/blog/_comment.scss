@@ -23,7 +23,6 @@
 
   .comment-notes {
     @include order(1);
-    -webkit-box-ordinal-group: 2;
   }
   .comment-fields-row {
     margin-bottom: 30px;
@@ -42,13 +41,13 @@
   }
   .form-submit {
     @include order(4);
-    -webkit-box-ordinal-group: 5;
 
     input {
+      cursor: pointer;
       display: inline-block;
       width: auto;
       padding: 9px 22px;
-      color: #fff;
+      color: #000000;
       border-color: $border-color;
       background-color: $border-color;
       border: none;
@@ -56,6 +55,7 @@
       @include transition(all 0.4s ease-in-out);
 
       &:hover {
+        color: #ffffff;
         border-color: $background-hover;
         background-color: $background-hover;
       }

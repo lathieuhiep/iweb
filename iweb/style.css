@@ -51,7 +51,6 @@ body {
   display: -webkit-flex;
   display: flex;
   -webkit-flex-direction: column;
-  -moz-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
 }
@@ -977,8 +976,6 @@ aside.widget_rss ul li .rssSummary {
 .site-author .author-avata {
   width: 80px;
   margin-right: 20px;
-  -webkit-box-flex: 0 0 auto;
-  -moz-box-flex: 0 0 auto;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -1061,7 +1058,6 @@ aside.widget_rss ul li .rssSummary {
   display: -webkit-flex;
   display: flex;
   -webkit-flex-direction: column;
-  -moz-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
   -webkit-box-orient: vertical;
@@ -1069,12 +1065,9 @@ aside.widget_rss ul li .rssSummary {
 }
 
 .comment-form .comment-notes {
-  -webkit-box-ordinal-group: 1;
   -moz-box-ordinal-group: 1;
   -ms-flex-order: 1;
-  -webkit-order: 1;
   order: 1;
-  -webkit-box-ordinal-group: 2;
 }
 
 .comment-form .comment-fields-row {
@@ -1098,19 +1091,17 @@ aside.widget_rss ul li .rssSummary {
 }
 
 .comment-form .form-submit {
-  -webkit-box-ordinal-group: 4;
   -moz-box-ordinal-group: 4;
   -ms-flex-order: 4;
-  -webkit-order: 4;
   order: 4;
-  -webkit-box-ordinal-group: 5;
 }
 
 .comment-form .form-submit input {
+  cursor: pointer;
   display: inline-block;
   width: auto;
   padding: 9px 22px;
-  color: #fff;
+  color: #000000;
   border-color: #eeeeee;
   background-color: #eeeeee;
   border: none;
@@ -1124,6 +1115,7 @@ aside.widget_rss ul li .rssSummary {
 }
 
 .comment-form .form-submit input:hover {
+  color: #ffffff;
   border-color: #ff5555;
   background-color: #ff5555;
 }
@@ -1151,8 +1143,6 @@ aside.widget_rss ul li .rssSummary {
 }
 
 .comments-area .comment-list li .comment-body .comment-author {
-  -webkit-box-flex: 0 0 auto;
-  -moz-box-flex: 0 0 auto;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -1160,8 +1150,6 @@ aside.widget_rss ul li .rssSummary {
 
 .comments-area .comment-list li .comment-body .comment-meta {
   padding-left: 30px;
-  -webkit-box-flex: 1;
-  -moz-box-flex: 1;
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
@@ -1237,8 +1225,6 @@ aside.widget_rss ul li .rssSummary {
   display: -webkit-flex;
   display: flex;
   -webkit-flex-flow: row wrap;
-  -moz-flex-flow: row wrap;
-  -ms-flex-flow: row wrap;
   flex-flow: row wrap;
 }
 
@@ -1320,8 +1306,6 @@ aside.widget_rss ul li .rssSummary {
   display: -webkit-flex;
   display: flex;
   -webkit-flex-flow: row wrap;
-  -moz-flex-flow: row wrap;
-  -ms-flex-flow: row wrap;
   flex-flow: row wrap;
 }
 
@@ -1373,8 +1357,6 @@ aside.widget_rss ul li .rssSummary {
 
 .site-footer__menu {
   text-align: right;
-  -webkit-box-flex: 1;
-  -moz-box-flex: 1;
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
@@ -1443,10 +1425,7 @@ aside.widget_rss ul li .rssSummary {
     display: -webkit-flex;
     display: flex;
     -webkit-justify-content: space-between;
-    -moz-justify-content: space-between;
-    -ms-justify-content: space-between;
     justify-content: space-between;
-    -ms-flex-pack: space-between;
   }
   .navbar-toggle {
     float: none;
@@ -1510,3 +1489,5 @@ aside.widget_rss ul li .rssSummary {
     display: block;
   }
 }
+
+/*# sourceMappingURL=style.css.map */
