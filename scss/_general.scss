@@ -6,48 +6,41 @@ html {
 }
 body {
   min-height: 100vh;
-  color: #777;
-  font-family: 'Raleway', sans-serif;
   line-height: 1.5em;
-  display: -webkit-flex;
-  display: flex;
-  flex-direction: column;
   overflow-x: hidden;
+  font-size: 14px;
+  color: $color-primary;
+  font-family: $font-family-text;
+  font-weight: $font-weight-regular;
+  @include flexbox();
+  @include flex-direction(column);
 }
 .sticky-footer {
   flex: 1 0 auto;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
   margin: 0 0 30px;
-  font-weight: 400;
-  color: #333;
+  font-weight: $font-weight-bold;
+  color: $color-title;
 }
 a {
-  color: #777;
-  -webkit-transition: all 0.4s ease-in-out;
-  -moz-transition: all 0.4s ease-in-out;
-  -o-transition: all 0.4s ease-in-out;
-  transition: all 0.4s ease-in-out;
-}
-a:hover,
-a.hover,
-a:focus,
-a.focus {
-  text-decoration: none;
-}
-a:hover {
-  color: #ff5555;
+  color: $color-primary;
+  @include transition(all 0.4s ease-in-out);
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+  &:hover {
+    color: $color-hover;
+  }
 }
 p {
   margin: 0 0 30px;
-}
-p:last-child {
-  margin-bottom: 0;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 img {
   max-width: 100%;
@@ -57,21 +50,26 @@ iframe {
   max-width: 100%;
 }
 blockquote {
-  font-size: 14px;
-  border-left: 1px solid #ff5555;
+  border-left: 1px solid $color-hover;
 }
 pre {
   white-space: pre-wrap;
   margin-bottom: 30px;
 }
-.nav > li > a :focus {
-  background-color: transparent;
+.nav {
+  > li {
+    > a {
+      &:focus {
+        background-color: transparent;
+      }
+    }
+  }
 }
-.form-control:focus {
-  border-color: #ff5555;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
+.form-control {
+  &:focus {
+    border-color: $color-hover;
+    @include box-shadow(none);
+  }
 }
 #site-loadding {
   position: fixed;
@@ -83,7 +81,7 @@ pre {
   z-index: 99999;
 }
 #back-top {
-  background-color: #ff5555;
+  background-color: $background-hover;
   opacity: 0;
   width: 40px;
   height: 40px;
@@ -92,26 +90,21 @@ pre {
   position: fixed;
   right: 15px;
   z-index: 1000;
-  -webkit-transition: all 400ms ease-in-out;
-  -moz-transition: all 400ms ease-in-out;
-  -o-transition: all 400ms ease-in-out;
-  transition: all 400ms ease-in-out;
-}
-#back-top a {
-  display: block;
-  color: #ffffff;
-  line-height: 40px;
-  text-align: center;
-  text-decoration: none;
-  -webkit-transition: all 0.25s ease-in-out;
-  -moz-transition: all 0.25s ease-in-out;
-  -o-transition: all 0.25s ease-in-out;
-  transition: all 0.25s ease-in-out;
-}
-#back-top.active_top {
-  opacity: 1;
-  bottom: 15px;
-}
-#back-top:hover {
-  background-color: #333;
+  @include transition(all 400ms ease-in-out);
+
+  a {
+    display: block;
+    color: #ffffff;
+    line-height: 40px;
+    text-align: center;
+    text-decoration: none;
+    @include transition(all 0.25s ease-in-out);
+  }
+  &.active_top {
+    opacity: 1;
+    bottom: 15px;
+  }
+  &:hover {
+    background-color: $background-primary;
+  }
 }

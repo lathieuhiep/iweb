@@ -1,5 +1,5 @@
 .site-footer {
-  border-top: 2px solid #ff5555;
+  border-top: 2px solid $border-color;
   padding-bottom: 10px;
 }
 .site-footer__top {
@@ -7,33 +7,32 @@
 }
 /* Footer Bottom */
 .site-copyright-menu {
-  border-top: 1px solid #eeeeee;
+  border-top: 1px solid $border-color;
   padding-top: 15px;
 }
 .site-copyright_text {
   font-size: 12px;
   margin: 0;
-  line-height: 1.5em;
 }
 .site-footer__menu {
-  flex: 1;
-  -webkit-flex: 1;
-  -ms-flex: 1;
   text-align: right;
-}
-.site-footer__menu ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-.site-footer__menu ul li {
-  display: inline-block;
-  padding: 0 5px;
-  line-height: 1.5em;
-}
-.site-footer__menu ul li:last-child {
-  padding-right: 0;
-}
-.site-footer__menu ul li a {
-  font-size: 12px;
+  @include flex(1);
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      display: inline-block;
+      padding: 0 5px;
+
+      &:last-child {
+        padding-right: 0;
+      }
+      a {
+        font-size: 12px;
+      }
+    }
+  }
 }

@@ -39,42 +39,42 @@ html {
 
 body {
   min-height: 100vh;
-  color: #777;
-  font-family: 'Raleway', sans-serif;
   line-height: 1.5em;
+  overflow-x: hidden;
+  font-size: 14px;
+  color: #777777;
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
-  overflow-x: hidden;
 }
 
 .sticky-footer {
   flex: 1 0 auto;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
   margin: 0 0 30px;
-  font-weight: 400;
-  color: #333;
+  font-weight: 700;
+  color: #333333;
 }
 
 a {
-  color: #777;
+  color: #777777;
   -webkit-transition: all 0.4s ease-in-out;
   -moz-transition: all 0.4s ease-in-out;
   -o-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
 }
 
-a:hover,
-a.hover,
-a:focus,
-a.focus {
+a:hover, a:focus {
   text-decoration: none;
 }
 
@@ -100,7 +100,6 @@ iframe {
 }
 
 blockquote {
-  font-size: 14px;
   border-left: 1px solid #ff5555;
 }
 
@@ -109,7 +108,7 @@ pre {
   margin-bottom: 30px;
 }
 
-.nav > li > a :focus {
+.nav > li > a:focus {
   background-color: transparent;
 }
 
@@ -164,7 +163,7 @@ pre {
 }
 
 #back-top:hover {
-  background-color: #333;
+  background-color: #333333;
 }
 
 /* =WordPress Core
@@ -173,8 +172,7 @@ pre {
   margin: 5px 20px 20px 0;
 }
 
-.aligncenter,
-div.aligncenter {
+.aligncenter {
   display: block;
   margin: 5px auto 5px auto;
 }
@@ -258,7 +256,7 @@ a img.aligncenter {
 .screen-reader-text:focus {
   background-color: #f1f1f1;
   clip: auto !important;
-  color: #21759b;
+  color: #ff5555;
   display: block;
   height: auto;
   left: 5px;
@@ -282,9 +280,7 @@ a img.aligncenter {
 }
 
 form.post-password-form p label {
-  font-family: 'Raleway', sans-serif;
-  font-size: 14px;
-  font-weight: 400;
+  font-family: "Raleway", sans-serif;
   float: left;
 }
 
@@ -292,15 +288,13 @@ form.post-password-form p input {
   border: 1px solid #dddddd;
   border-radius: 0;
   padding: 5px;
+  margin-bottom: 20px;
 }
 
 form.post-password-form p input[type='submit'] {
   border-radius: 0;
   background-color: #696969;
   border: none;
-  font-size: 12px;
-  font-weight: 300;
-  line-height: 24px;
   color: #ffffff;
   text-transform: uppercase;
   padding: 5px 15px;
@@ -678,7 +672,7 @@ form.post-password-form p input[type='submit'] {
   padding: 50px 0;
 }
 
-.site-page-content:after {
+.site-page-content :after {
   display: table;
   clear: both;
   content: '';
@@ -697,7 +691,7 @@ form.post-password-form p input[type='submit'] {
 }
 
 .site-post-title a {
-  color: #333;
+  color: #333333;
 }
 
 .site-post-title a:hover {
@@ -730,7 +724,7 @@ form.post-password-form p input[type='submit'] {
 }
 
 .site-post-meta span a:hover {
-  color: #777;
+  color: #777777;
 }
 
 .site-post-excerpt ul li {
@@ -747,7 +741,7 @@ form.post-password-form p input[type='submit'] {
 }
 
 .site-post-excerpt table tr {
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #eeeeee;
 }
 
 .site-post-excerpt table tr th {
@@ -824,8 +818,7 @@ aside select {
   font-size: 12px;
 }
 
-aside.widget_archive ul li a,
-aside.widget_categories ul li a {
+aside.widget_archive ul li a, aside.widget_categories ul li a {
   display: inline-block;
   margin-right: 5px;
 }
@@ -884,13 +877,15 @@ aside.widget_rss ul li .rssSummary {
 }
 
 .search-field {
-  border: 1px solid #eaeaea;
+  border: 1px solid #eeeeee;
+  height: auto;
+  padding: 9px 10px;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
   box-shadow: none;
-  height: auto;
-  padding: 9px 10px;
 }
 
 .search-submit {
@@ -911,14 +906,8 @@ aside.widget_rss ul li .rssSummary {
 # Blog
 -----------------------------------------------------------------------------*/
 /* Single */
-.site-single .site-post-title {
-  margin-bottom: 30px;
-}
-
-.site-single .site-post-image {
-  margin-bottom: 30px;
-}
-
+.site-single .site-post-title,
+.site-single .site-post-image,
 .site-single .page-links {
   margin-bottom: 30px;
 }
@@ -936,7 +925,7 @@ aside.widget_rss ul li .rssSummary {
   display: inline-block;
   padding: 3px 7px;
   margin: 0 5px 5px 0;
-  border: 1px solid #eee;
+  border: 1px solid #eeeeee;
   font-size: 12px;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
@@ -963,7 +952,7 @@ aside.widget_rss ul li .rssSummary {
 
 .site-post-share a {
   display: inline-block;
-  border: 1px solid #ddd;
+  border: 1px solid #eeeeee;
   padding: 5px 12px;
   font-size: 12px;
   margin: 0 5px;
@@ -988,6 +977,10 @@ aside.widget_rss ul li .rssSummary {
 .site-author .author-avata {
   width: 80px;
   margin-right: 20px;
+  -webkit-box-flex: 0 0 auto;
+  -moz-box-flex: 0 0 auto;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
@@ -1035,7 +1028,6 @@ aside.widget_rss ul li .rssSummary {
 
 .page-numbers li span.current,
 .page-numbers li a:hover {
-  color: #fff;
   background: #ff5555;
   border-color: #ff5555;
 }
@@ -1064,18 +1056,25 @@ aside.widget_rss ul li .rssSummary {
 
 .comment-form {
   display: -webkit-box;
+  display: -moz-box;
   display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
 }
 
 .comment-form .comment-notes {
-  -webkit-box-ordinal-group: 2;
+  -webkit-box-ordinal-group: 1;
+  -moz-box-ordinal-group: 1;
   -ms-flex-order: 1;
+  -webkit-order: 1;
   order: 1;
+  -webkit-box-ordinal-group: 2;
 }
 
 .comment-form .comment-fields-row {
@@ -1088,7 +1087,7 @@ aside.widget_rss ul li .rssSummary {
   width: 100%;
   padding: 9px 22px;
   height: auto;
-  border: 1px solid #eaeaea;
+  border: 1px solid #eeeeee;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   border-radius: 0;
@@ -1099,9 +1098,12 @@ aside.widget_rss ul li .rssSummary {
 }
 
 .comment-form .form-submit {
-  -webkit-box-ordinal-group: 5;
+  -webkit-box-ordinal-group: 4;
+  -moz-box-ordinal-group: 4;
   -ms-flex-order: 4;
+  -webkit-order: 4;
   order: 4;
+  -webkit-box-ordinal-group: 5;
 }
 
 .comment-form .form-submit input {
@@ -1109,8 +1111,8 @@ aside.widget_rss ul li .rssSummary {
   width: auto;
   padding: 9px 22px;
   color: #fff;
-  border-color: #ff5555;
-  background-color: #ff5555;
+  border-color: #eeeeee;
+  background-color: #eeeeee;
   border: none;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
@@ -1122,8 +1124,8 @@ aside.widget_rss ul li .rssSummary {
 }
 
 .comment-form .form-submit input:hover {
-  border-color: #ff7777;
-  background-color: #ff7777;
+  border-color: #ff5555;
+  background-color: #ff5555;
 }
 
 .comments-area ul {
@@ -1141,11 +1143,16 @@ aside.widget_rss ul li .rssSummary {
 
 .comments-area .comment-list li .comment-body {
   margin: 0 0 30px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
 }
 
 .comments-area .comment-list li .comment-body .comment-author {
+  -webkit-box-flex: 0 0 auto;
+  -moz-box-flex: 0 0 auto;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -1153,6 +1160,8 @@ aside.widget_rss ul li .rssSummary {
 
 .comments-area .comment-list li .comment-body .comment-meta {
   padding-left: 30px;
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
@@ -1222,9 +1231,14 @@ aside.widget_rss ul li .rssSummary {
 
 .woocommerce ul.products {
   margin: 0 -15px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
   -webkit-flex-flow: row wrap;
+  -moz-flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
   flex-flow: row wrap;
 }
 
@@ -1233,8 +1247,8 @@ aside.widget_rss ul li .rssSummary {
 }
 
 .woocommerce ul.products li.product {
-  margin: 0 0 15px;
   float: none;
+  margin: 0 0 15px;
   padding: 0 15px;
   width: 25%;
 }
@@ -1251,10 +1265,10 @@ aside.widget_rss ul li .rssSummary {
 .woocommerce ul.products li.product .button {
   padding: 8px 10px;
   line-height: inherit;
-  background-color: #ff5555;
+  border: none;
   color: #ffffff;
   font-weight: 400;
-  border: none;
+  background-color: #333333;
 }
 
 .woocommerce nav.woocommerce-pagination {
@@ -1277,7 +1291,7 @@ aside.widget_rss ul li .rssSummary {
 .woocommerce nav.woocommerce-pagination ul li a {
   display: block;
   cursor: pointer;
-  border: 1px solid #ddd;
+  border: 1px solid #eeeeee;
   padding: 5px 12px;
   line-height: inherit;
   min-width: inherit;
@@ -1288,7 +1302,7 @@ aside.widget_rss ul li .rssSummary {
 
 .woocommerce nav.woocommerce-pagination ul li a:focus {
   background-color: transparent;
-  color: #333;
+  color: #333333;
 }
 
 .woocommerce nav.woocommerce-pagination ul li span.current,
@@ -1300,9 +1314,14 @@ aside.widget_rss ul li .rssSummary {
 
 .woocommerce .site-shop-single .site-shop-single__warp {
   margin: 0 -15px 30px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
   -webkit-flex-flow: row wrap;
+  -moz-flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
   flex-flow: row wrap;
 }
 
@@ -1333,7 +1352,7 @@ aside.widget_rss ul li .rssSummary {
 # Footer
 -----------------------------------------------------------------------------*/
 .site-footer {
-  border-top: 2px solid #ff5555;
+  border-top: 2px solid #eeeeee;
   padding-bottom: 10px;
 }
 
@@ -1350,14 +1369,15 @@ aside.widget_rss ul li .rssSummary {
 .site-copyright_text {
   font-size: 12px;
   margin: 0;
-  line-height: 1.5em;
 }
 
 .site-footer__menu {
-  flex: 1;
+  text-align: right;
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
   -webkit-flex: 1;
   -ms-flex: 1;
-  text-align: right;
+  flex: 1;
 }
 
 .site-footer__menu ul {
@@ -1369,7 +1389,6 @@ aside.widget_rss ul li .rssSummary {
 .site-footer__menu ul li {
   display: inline-block;
   padding: 0 5px;
-  line-height: 1.5em;
 }
 
 .site-footer__menu ul li:last-child {
@@ -1418,10 +1437,16 @@ aside.widget_rss ul li .rssSummary {
     display: block;
   }
   .site-logo {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
+    -webkit-justify-content: space-between;
+    -moz-justify-content: space-between;
+    -ms-justify-content: space-between;
     justify-content: space-between;
-    align-items: center;
+    -ms-flex-pack: space-between;
   }
   .navbar-toggle {
     float: none;
