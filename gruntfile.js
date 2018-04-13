@@ -7,7 +7,7 @@ module.exports = grunt => {
             },
 			compile: {
 				files: {
-					'iweb/style.css': 'sass/style.scss',
+					'iweb/style.css': 'scss/style.scss',
 					// 'test/tmp/compile2.css': 'test/fixtures/imported.scss'
 				}
 			},
