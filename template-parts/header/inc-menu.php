@@ -1,67 +1,13 @@
-
 <?php
+
     global $iweb_options;
 
-    $iweb_information_address   =   $iweb_options['iweb_information_address'];
-    $iweb_information_mail      =   $iweb_options['iweb_information_mail'];
-    $iweb_information_phone     =   $iweb_options['iweb_information_phone'];
     $iweb_logotype              =   $iweb_options['iweb_type_logo'] == '' ? 'logo_image' : $iweb_options['iweb_type_logo'];
 
 ?>
 <header id="home" class="header">
     <nav id="navigation" class="navbar-expand-lg">
-        <div class="information">
-            <div class="container">
-                <div class="row">
-
-                    <div class="col-md-7">
-
-                        <?php if ( $iweb_information_address != '' ) : ?>
-
-                            <span>
-                                <i class="fa fa-map-marker" aria-hidden="true"></i>
-                                 <?php echo esc_html( $iweb_information_address ); ?>
-                            </span>
-
-                        <?php
-
-                        endif;
-
-                        if ( $iweb_information_mail != '' ) :
-
-                        ?>
-
-                            <span>
-                                <i class="fa fa-envelope-o" aria-hidden="true"></i>
-                                <?php echo esc_html( $iweb_information_mail ); ?>
-                            </span>
-
-                        <?php
-
-                        endif;
-
-                        if ( $iweb_information_phone != '' ) :
-
-                        ?>
-
-                            <span>
-                                <i class="fa fa-phone" aria-hidden="true"></i>
-                                <?php echo esc_html( $iweb_information_phone ); ?>
-                            </span>
-
-                        <?php endif; ?>
-
-                    </div>
-
-                    <div class="col-md-5">
-
-                        <?php iweb_get_social_url(); ?>
-
-                    </div>
-
-                </div>
-            </div>
-        </div>
+        <?php get_template_part( 'template-parts/header/inc', 'information' ); ?>
 
         <div class="header-bottom">
             <div class="container">
