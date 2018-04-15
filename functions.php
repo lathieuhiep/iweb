@@ -359,18 +359,18 @@ if ( ! function_exists( 'iweb_fonts_url' ) ) :
         * supported by Open Sans, translate this to 'off'. Do not translate
         * into your own language.
         */
-        $iweb_font_google = _x( 'on', 'Raleway font: on or off', 'iweb' );
+        $iweb_font_google = _x( 'on', 'Google font: on or off', 'iweb' );
 
         if ( 'off' !== $iweb_font_google ) {
             $iweb_font_families = array();
 
             if ( 'off' !== $iweb_font_google ) {
-                $iweb_font_families[] = 'Raleway:300,400,700';
+                $iweb_font_families[] = 'Open Sans:400,700';
             }
 
             $iweb_query_args = array(
                 'family' => urlencode( implode( '|', $iweb_font_families ) ),
-                'subset' => urlencode( 'latin' ),
+                'subset' => urlencode( 'latin, vietnamese' ),
             );
 
             $iweb_fonts_url = add_query_arg( $iweb_query_args, 'https://fonts.googleapis.com/css' );
