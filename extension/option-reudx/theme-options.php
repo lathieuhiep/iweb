@@ -342,16 +342,16 @@ Redux::setSection( $iweb_opt_name, array(
 
         array(
             'id'        =>  'iweb_information_mail',
-            'type'      =>  'text',
+            'type'      =>  'multi_text',
             'title'     =>  esc_html__( 'Mail', 'iweb' ),
-            'default'   =>  'info@domain.com',
+            'default'   =>  'hungkieu190@gmail.com',
         ),
 
         array(
             'id'        =>  'iweb_information_phone',
-            'type'      =>  'text',
+            'type'      =>  'multi_text',
             'title'     =>  esc_html__( 'Phone', 'iweb' ),
-            'default'   =>  '+1 234 567 186',
+            'default'   =>  '094 709 11 90',
         ),
 
     )
