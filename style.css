@@ -43,7 +43,7 @@ body {
   overflow-x: hidden;
   font-size: 14px;
   color: #777777;
-  font-family: "Raleway", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 400;
   display: -webkit-box;
   display: -moz-box;
@@ -279,7 +279,7 @@ a img.aligncenter {
 }
 
 form.post-password-form p label {
-  font-family: "Raleway", sans-serif;
+  font-family: "Open Sans", sans-serif;
   float: left;
 }
 
@@ -461,12 +461,38 @@ form.post-password-form p input[type='submit'] {
   border-bottom: 1px solid #eee;
 }
 
-.information span {
+.information p {
   display: inline-block;
   padding-left: 7px;
   padding-right: 12px;
-  border-left: 1px solid #eee;
-  font-size: 12px;
+  border-left: 1px solid #eeeeee;
+  margin: 0;
+}
+
+.information p span {
+  display: inline-block;
+  position: relative;
+}
+
+.information p span:first-child:before {
+  font-family: 'FontAwesome';
+  margin-right: 5px;
+}
+
+.information p span:last-child:before {
+  content: "-";
+}
+
+.information p.information-address span:first-child {
+  content: "\f041";
+}
+
+.information p.information-mail span:first-child:before {
+  content: "\f0e0";
+}
+
+.information p.information-phone span:first-child:before {
+  content: "\f095";
 }
 
 .site-social {
@@ -485,7 +511,11 @@ form.post-password-form p input[type='submit'] {
   text-align: center;
   width: 32px;
   line-height: 32px;
-  border-right: 1px solid #eee;
+  border-right: 1px solid #eeeeee;
+}
+
+.site-social li a:first-child {
+  border-left: 1px solid #eeeeee;
 }
 
 .site-social li a:hover {
@@ -585,19 +615,16 @@ form.post-password-form p input[type='submit'] {
 .site-menu ul li a {
   padding: 0 15px;
   text-shadow: none;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
   display: block;
-}
-
-.site-menu ul li a:last-child {
-  padding-right: 0;
 }
 
 .site-menu ul li a:hover {
   background-color: transparent;
   color: #ff5555;
+}
+
+.site-menu ul li:last-child a {
+  padding-right: 0;
 }
 
 .site-menu ul li .sub-menu {
@@ -669,6 +696,10 @@ form.post-password-form p input[type='submit'] {
 -----------------------------------------------------------------------------*/
 .site-container {
   padding: 50px 0;
+}
+
+.site-container.site-container-elementor {
+  padding: 0;
 }
 
 .site-page-content :after {
