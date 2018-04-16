@@ -174,7 +174,7 @@ class iweb_widget_introduces extends Widget_Base {
             </div>
 
             <div class="element-introduces__box">
-                <<?php echo esc_attr( $iweb_widget_elmentor_settings['title_html_tag'] ); ?> class="element-introduces__title">
+                <<?php echo esc_attr( $iweb_widget_elmentor_settings['title_html_tag'] ); ?> class="element-introduces__title element-title">
                     <?php echo esc_html( $iweb_widget_elmentor_settings['widget_title'] ); ?>
                 </<?php echo esc_attr( $iweb_widget_elmentor_settings['title_html_tag'] ); ?>>
 
@@ -202,7 +202,7 @@ class iweb_widget_introduces extends Widget_Base {
             </div>
 
             <div class="element-introduces__box">
-                <{{{ settings.title_html_tag }}} class="element-introduces__title">
+                <{{{ settings.title_html_tag }}} class="element-introduces__title element-title">
                     {{{ settings.widget_title }}}
                 </{{{ settings.title_html_tag }}}>
 
