@@ -607,3 +607,24 @@ function iweb_sanitize_pagination( $iweb_content ) {
 
 add_action('navigation_markup_template', 'iweb_sanitize_pagination');
 /* End pagination */
+
+/* Start get Category check box */
+function iweb_check_get_cat( $iweb_check_type_taxonomy ) {
+
+    $iweb_cat_check    =   array();
+    $iweb_category     =   get_categories( array( 'taxonomy'   =>  $iweb_check_type_taxonomy ) );
+
+    if ( isset( $iweb_category ) && !empty( $iweb_category ) ):
+
+        foreach( $iweb_category as $iweb_cate ) {
+
+            $iweb_cat_check[$iweb_cate->term_id]  =   $iweb_cate->name;
+
+        }
+
+    endif;
+
+    return $iweb_cat_check;
+
+}
+/* End get Category check box */
