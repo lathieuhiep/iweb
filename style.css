@@ -22,6 +22,8 @@
   ## Pagination
   ## Comment
 ## Shop Woocommerce
+## Elementor
+  ## Introduces
 # Footer
 # Responsive
 * -----------------------------------------------------------------------------
@@ -42,7 +44,7 @@ body {
   line-height: 1.5em;
   overflow-x: hidden;
   font-size: 14px;
-  color: #777777;
+  color: #333333;
   font-family: "Open Sans", sans-serif;
   font-weight: 400;
   display: -webkit-box;
@@ -66,7 +68,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 a {
-  color: #777777;
+  color: #333333;
   -webkit-transition: all 0.4s ease-in-out;
   -moz-transition: all 0.4s ease-in-out;
   -o-transition: all 0.4s ease-in-out;
@@ -754,7 +756,7 @@ form.post-password-form p input[type='submit'] {
 }
 
 .site-post-meta span a:hover {
-  color: #777777;
+  color: #333333;
 }
 
 .site-post-excerpt ul li {
@@ -1364,6 +1366,20 @@ aside.widget_rss ul li .rssSummary {
 }
 
 /**
+# Elementor
+-----------------------------------------------------------------------------*/
+/* Introduces */
+.element-introduces__icon .element-introduces__font--icon {
+  font-size: 45px;
+}
+
+.element-introduces__title {
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 18px;
+}
+
+/**
 # Footer
 -----------------------------------------------------------------------------*/
 .site-footer {
@@ -1415,6 +1431,14 @@ aside.widget_rss ul li .rssSummary {
 /**
 # Responsive
 -----------------------------------------------------------------------------*/
+@media (min-width: 768px) {
+  .element-introduces__icon {
+    padding-right: 15px;
+    width: 82px;
+    flex: 0 0 auto;
+  }
+}
+
 @media (min-width: 992px) and (max-width: 1400px) {
   .site-menu ul li:nth-last-child(1) .sub-menu,
   .site-menu ul li:nth-last-child(2) .sub-menu {
