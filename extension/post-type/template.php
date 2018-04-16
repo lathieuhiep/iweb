@@ -77,4 +77,27 @@ function iweb_create_template() {
     register_taxonomy( 'template_cat', array( 'template' ), $taxonomy_args );
     /* End taxonomy template */
 
+    /* Start tag template */
+    $taxonomy_tag_labels = array(
+        'name'            =>  _x( 'Template tag', 'taxonomy general name', 'iweb' ),
+        'singular_name'   =>  _x( 'Tag', 'taxonomy singular name', 'iweb' ),
+        'search_items'    =>  esc_html__( 'Search template tag', 'iweb' ),
+        'edit_item'       =>  esc_html__( 'Edit Tag', 'iweb' ),
+        'update_item'     =>  esc_html__( 'Update Tag', 'iweb' ),
+        'add_new_item'    =>  esc_html__( 'Add New Tag', 'iweb' ),
+        'new_item_name'   =>  esc_html__( 'New Tag Name', 'iweb' ),
+        'menu_name'       =>  esc_html__( 'Tag', 'iweb' ),
+    );
+
+    $taxonomy_tag_args = array(
+        'hierarchical'      =>  '',
+        'labels'            =>  $taxonomy_tag_labels,
+        'show_ui'           =>  true,
+        'show_admin_column' =>  true,
+        "singular_label"    =>  "Template Tag",
+        'rewrite'           =>  array( 'slug' => 'tu-khoa-giao-dien' ),
+    );
+    register_taxonomy( 'template_tag', array( 'template' ), $taxonomy_tag_args );
+    /* End tag template */
+
 }
