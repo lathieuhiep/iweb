@@ -107,6 +107,10 @@ if ( class_exists('Woocommerce') ) :
 
 endif;
 
+/* Require Post Type */
+foreach(glob( get_parent_theme_file_path( '/extension/post-type/*.php' ) ) as $file){
+    require $file;
+}
 
 /**
  * Register Sidebar
