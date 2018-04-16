@@ -1369,16 +1369,19 @@ aside.widget_rss ul li .rssSummary {
 # Elementor
 -----------------------------------------------------------------------------*/
 /* Introduces */
+.element-title {
+  font-size: 24px;
+}
+
 .element-introduces__icon .element-introduces__font--icon {
   font-size: 45px;
 }
 
 .element-introduces__title {
-  font-size: 24px;
-  font-weight: 400;
   margin-bottom: 18px;
 }
 
+/* Template */
 /**
 # Footer
 -----------------------------------------------------------------------------*/
