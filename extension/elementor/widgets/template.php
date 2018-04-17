@@ -129,7 +129,18 @@ class iweb_widget_template extends Widget_Base {
             $iweb_widget_elmentor_class_col =   'col-12 col-sm-12 col-md-12';
         endif;
 
+        $iweb_template_settings =   [
+            'limit'     =>  $iweb_widget_elmentor_limit,
+            'orderby'   =>  $iweb_widget_elmentor_order_by,
+            'order'     =>  $iweb_widget_elmentor_order,
+        ];
+
         if ( !empty( $iweb_widget_elmentor_cat_select ) ) :
+
+            $iweb_template_get_cat  = get_terms( array(
+                'taxonomy'  =>  'template_cat',
+                'include'   =>  $iweb_widget_elmentor_cat_select
+            ) );
 
             $iweb_widget_template_arg = array (
 
@@ -149,6 +160,8 @@ class iweb_widget_template extends Widget_Base {
 
         else:
 
+            $iweb_template_get_cat  =   get_terms( 'template_cat' );
+
             $iweb_widget_template_arg = array (
 
                 'post_type'         =>  'template',
@@ -162,6 +175,18 @@ class iweb_widget_template extends Widget_Base {
 
         $iweb_widget_template_query = new \ WP_Query( $iweb_widget_template_arg );
 
+        $iweb_template_get_cat_id = array();
+
+        if ( !empty( $iweb_template_get_cat ) ) :
+
+            foreach ( $iweb_template_get_cat as $iweb_template_get_cat_item ) :
+
+                $iweb_template_get_cat_id[]  =   $iweb_template_get_cat_item -> term_id;
+
+            endforeach;
+
+        endif;
+
     ?>
 
         <div class="element-template">
@@ -172,6 +197,25 @@ class iweb_widget_template extends Widget_Base {
             <?php if ( $iweb_widget_template_query -> have_posts() ) : ?>
 
                 <div class="element-template__container">
+
+                    <?php if ( !empty( $iweb_template_get_cat ) ) : ?>
+
+                        <div class="element-template__btn--cat text-center" data-settings='<?php echo esc_attr( wp_json_encode( $iweb_template_settings ) ); ?>'>
+                            <button class="element-template__btn--filter" data-cat-id="<?php echo esc_attr( implode(",", $iweb_template_get_cat_id ) ); ?>">
+                                <?php esc_html_e( 'Tất cả',  'iweb' ); ?>
+                            </button>
+
+                            <?php foreach ( $iweb_template_get_cat as $iweb_template_get_cat_item ) : ?>
+
+                                <button class="element-template__btn--filter" data-cat-id="<?php echo esc_attr( $iweb_template_get_cat_item -> term_id ); ?>">
+                                    <?php echo esc_attr( $iweb_template_get_cat_item -> name ); ?>
+                                </button>
+
+                            <?php endforeach; ?>
+                        </div>
+
+                    <?php endif; ?>
+
                     <div class="row">
 
                         <?php
@@ -180,15 +224,18 @@ class iweb_widget_template extends Widget_Base {
                         ?>
 
                             <div class="<?php echo esc_attr( $iweb_widget_elmentor_class_col ); ?>">
-                                <div class="element-template__image-demo">
-                                    <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">&nbsp;</a>
+                                <div class="element-template__item">
+                                    <div class="element-template__image-demo">
+                                        <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">&nbsp;</a>
 
-                                    <?php the_post_thumbnail( 'full' ); ?>
+                                        <?php the_post_thumbnail( 'full' ); ?>
+                                    </div>
 
                                     <h3 class="element-template__title-demo">
                                         <?php the_title(); ?>
                                     </h3>
                                 </div>
+
                             </div>
 
                         <?php
