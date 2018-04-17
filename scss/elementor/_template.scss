@@ -1,0 +1,34 @@
+.element-template__image-demo {
+  position: relative;
+  height: 325px;
+  padding: 15px;
+  background-color: #ffffff;
+  margin-bottom: 30px;
+  border: 1px solid $border-color;
+  @include box-shadow( 5px 5px 15px 5px #dddddd );
+
+  a {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2;
+  }
+  img {
+    height: 100%;
+    @include object-fit(cover);
+  }
+}
+.element-template__title-demo {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  margin: 0;
+  padding: 10px 15px;
+  font-size: 15px;
+  font-weight: 400;
+  color: #ffffff;
+  background-color: rgba( 0,0,0,0.8 );
+}

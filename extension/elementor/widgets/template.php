@@ -112,7 +112,55 @@ class iweb_widget_template extends Widget_Base {
 
     protected function render() {
 
-        $iweb_widget_elmentor_settings  =   $this->get_settings();
+        $iweb_widget_elmentor_settings      =   $this->get_settings();
+        $iweb_widget_elmentor_col_number    =   $iweb_widget_elmentor_settings['template_column_number'];
+        $iweb_widget_elmentor_cat_select    =   $iweb_widget_elmentor_settings['template_select_cat'];
+        $iweb_widget_elmentor_limit         =   $iweb_widget_elmentor_settings['template_limit'];
+        $iweb_widget_elmentor_order_by      =   $iweb_widget_elmentor_settings['template_order_by'];
+        $iweb_widget_elmentor_order         =   $iweb_widget_elmentor_settings['template_order'];
+
+        if ( $iweb_widget_elmentor_col_number == 4 ) :
+            $iweb_widget_elmentor_class_col =   'col-12 col-sm-6 col-md-3 col-lg-4 col-xl-3';
+        elseif ( $iweb_widget_elmentor_col_number == 3 ) :
+            $iweb_widget_elmentor_class_col =   'col-12 col-sm-6 col-md-3 col-lg-4';
+        elseif ( $iweb_widget_elmentor_col_number == 2 ):
+            $iweb_widget_elmentor_class_col =   'col-12 col-sm-6 col-md-6';
+        else:
+            $iweb_widget_elmentor_class_col =   'col-12 col-sm-12 col-md-12';
+        endif;
+
+        if ( !empty( $iweb_widget_elmentor_cat_select ) ) :
+
+            $iweb_widget_template_arg = array (
+
+                'post_type'         =>  'template',
+                'posts_per_page'    =>  $iweb_widget_elmentor_limit,
+                'orderby'           =>  $iweb_widget_elmentor_order_by,
+                'order'             =>  $iweb_widget_elmentor_order,
+                'tax_query'         =>  array(
+                    array(
+                        'taxonomy'  =>  'template_cat',
+                        'field'     =>  'id',
+                        'terms'     =>  $iweb_widget_elmentor_cat_select
+                    )
+                )
+
+            );
+
+        else:
+
+            $iweb_widget_template_arg = array (
+
+                'post_type'         =>  'template',
+                'posts_per_page'    =>  $iweb_widget_elmentor_limit,
+                'orderby'           =>  $iweb_widget_elmentor_order_by,
+                'order'             =>  $iweb_widget_elmentor_order,
+
+            );
+
+        endif;
+
+        $iweb_widget_template_query = new \ WP_Query( $iweb_widget_template_arg );
 
     ?>
 
@@ -120,6 +168,38 @@ class iweb_widget_template extends Widget_Base {
             <h2 class="element-template__title element-title text-center text-uppercase">
                 <?php echo esc_html( $iweb_widget_elmentor_settings['template_title'] ); ?>
             </h2>
+
+            <?php if ( $iweb_widget_template_query -> have_posts() ) : ?>
+
+                <div class="element-template__container">
+                    <div class="row">
+
+                        <?php
+                        while ( $iweb_widget_template_query -> have_posts() ) :
+                            $iweb_widget_template_query -> the_post();
+                        ?>
+
+                            <div class="<?php echo esc_attr( $iweb_widget_elmentor_class_col ); ?>">
+                                <div class="element-template__image-demo">
+                                    <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">&nbsp;</a>
+
+                                    <?php the_post_thumbnail( 'full' ); ?>
+
+                                    <h3 class="element-template__title-demo">
+                                        <?php the_title(); ?>
+                                    </h3>
+                                </div>
+                            </div>
+
+                        <?php
+                        endwhile;
+                        wp_reset_postdata();
+                        ?>
+
+                    </div>
+                </div>
+
+            <?php endif; ?>
         </div>
 
     <?php
