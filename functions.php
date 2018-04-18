@@ -232,13 +232,13 @@ function iweb_register_front_end() {
 
     wp_enqueue_script( 'bootstrap', get_theme_file_uri( '/js/bootstrap.min.js' ), array('jquery'), '4.0.0', true );
 
-    if( is_single() || is_tag() || is_category() || is_archive() || is_author() || is_search() || is_home()){
+    if( is_single() || is_tag() || is_category() || is_archive() || is_author() || is_search() || is_home() ) :
 
         /* Start Carousel Js */
         wp_enqueue_script( 'owl-carousel', get_theme_file_uri( '/js/owl.carousel.min.js' ), array(), '2.2.1', true );
         /* End Carousel Js */
 
-    }
+    endif;
 
     if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
         wp_enqueue_script( 'comment-reply' );

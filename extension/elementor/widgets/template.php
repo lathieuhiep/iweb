@@ -6,6 +6,13 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 class iweb_widget_template extends Widget_Base {
 
+    public function __construct(array $data = [], array $args = null)
+    {
+        parent::__construct($data, $args);
+
+        $this->admin_enqueue_scripts();
+    }
+
     public function get_categories() {
         return array( 'iweb-widgets' );
     }
@@ -20,6 +27,18 @@ class iweb_widget_template extends Widget_Base {
 
     public function get_icon() {
         return 'eicon-posts-grid';
+    }
+
+    public function admin_enqueue_scripts() {
+
+        /* Start Element Template js */
+        wp_enqueue_script( 'element-template', get_theme_file_uri( '/js/element-template.js' ), array(), '', true );
+
+        $iweb_template_admin_url  =   admin_url('admin-ajax.php');
+        $iweb_template_get        =   array( 'url' => $iweb_template_admin_url );
+        wp_localize_script( 'element-template', 'iweb_template_get', $iweb_template_get );
+        /* End Element Template js */
+
     }
 
     protected function _register_controls() {
