@@ -32,11 +32,12 @@ class iweb_widget_template extends Widget_Base {
     public function admin_enqueue_scripts() {
 
         /* Start Element Template js */
-        wp_enqueue_script( 'element-template', get_theme_file_uri( '/js/element-template.js' ), array(), '', true );
 
         $iweb_template_admin_url  =   admin_url('admin-ajax.php');
         $iweb_template_get        =   array( 'url' => $iweb_template_admin_url );
-        wp_localize_script( 'element-template', 'iweb_template_get', $iweb_template_get );
+        wp_localize_script( 'element-template', 'iweb_template_load', $iweb_template_get );
+
+        wp_enqueue_script( 'element-template', get_theme_file_uri( '/js/element-template.js' ), array(), '', true );
         /* End Element Template js */
 
     }
@@ -152,6 +153,7 @@ class iweb_widget_template extends Widget_Base {
             'limit'     =>  $iweb_widget_elmentor_limit,
             'orderby'   =>  $iweb_widget_elmentor_order_by,
             'order'     =>  $iweb_widget_elmentor_order,
+            'column'    =>  $iweb_widget_elmentor_col_number
         ];
 
         if ( !empty( $iweb_widget_elmentor_cat_select ) ) :
@@ -217,10 +219,14 @@ class iweb_widget_template extends Widget_Base {
 
                 <div class="element-template__container">
 
+                    <div class="loader_box">
+                        <div class="loader_product_ajax"></div>
+                    </div>
+
                     <?php if ( !empty( $iweb_template_get_cat ) ) : ?>
 
                         <div class="element-template__btn--cat text-center" data-settings='<?php echo esc_attr( wp_json_encode( $iweb_template_settings ) ); ?>'>
-                            <button class="element-template__btn--filter" data-cat-id="<?php echo esc_attr( implode(",", $iweb_template_get_cat_id ) ); ?>">
+                            <button class="element-template__btn--filter active" data-cat-id="<?php echo esc_attr( implode(",", $iweb_template_get_cat_id ) ); ?>">
                                 <?php esc_html_e( 'Tất cả',  'iweb' ); ?>
                             </button>
 
@@ -235,14 +241,14 @@ class iweb_widget_template extends Widget_Base {
 
                     <?php endif; ?>
 
-                    <div class="row">
+                    <div class="element-template__row row">
 
                         <?php
                         while ( $iweb_widget_template_query -> have_posts() ) :
                             $iweb_widget_template_query -> the_post();
                         ?>
 
-                            <div class="<?php echo esc_attr( $iweb_widget_elmentor_class_col ); ?>">
+                            <div class="element-template__col <?php echo esc_attr( $iweb_widget_elmentor_class_col ); ?>">
                                 <div class="element-template__item">
                                     <div class="element-template__image-demo">
                                         <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">&nbsp;</a>
