@@ -151,11 +151,47 @@ class iweb_widget_introduces extends Widget_Base {
 
         $this->end_controls_section();
 
+        $this->start_controls_section(
+            'section_link',
+            [
+                'label' => esc_html__( 'Link', 'iweb' ),
+            ]
+        );
+
+        $this->add_control(
+            'text_link',
+            [
+                'label'         =>  esc_html__( 'Text Link', 'iweb' ),
+                'type'          =>  Controls_Manager::TEXT,
+                'default'       =>  esc_html__( '', 'iweb' ),
+            ]
+        );
+
+        $this->add_control(
+            'link',
+            [
+                'label'     =>  esc_html__( 'Link', 'iweb' ),
+                'type'      =>  Controls_Manager::URL,
+                'default'   =>  [
+                    'url'           =>  '#',
+                    'is_external'   =>  '',
+                ],
+                'show_external' => true, // Show the 'open in new tab' button.
+            ]
+        );
+
+        $this->end_controls_section();
+
     }
 
     protected function render() {
 
         $iweb_widget_elmentor_settings  =   $this->get_settings();
+
+        $iweb_widget_elmentor_text_link         =   $iweb_widget_elmentor_settings['text_link'];
+        $iweb_widget_elmentor_link_text         =   $iweb_widget_elmentor_settings['link'];
+        $iweb_widget_elmentor_link_text_url     =   $iweb_widget_elmentor_link_text['url'];
+        $iweb_widget_elmentor_link_text_target  =   $iweb_widget_elmentor_link_text['is_external'] ? 'target="_blank"' : '';
 
     ?>
 
@@ -181,6 +217,15 @@ class iweb_widget_introduces extends Widget_Base {
                 <div class="element-introduces__content">
                     <?php echo wp_kses_post( $iweb_widget_elmentor_settings['widget_description'] ); ?>
                 </div>
+
+                <?php if ( !empty( $iweb_widget_elmentor_text_link ) ) : ?>
+                    <div class="element-introduces__text--link text-right">
+                        <a href="<?php echo esc_url( $iweb_widget_elmentor_link_text_url ); ?>" title="<?php echo esc_attr( $iweb_widget_elmentor_text_link ); ?>" <?php echo esc_attr( $iweb_widget_elmentor_link_text_target ); ?>>
+                            <?php echo esc_html( $iweb_widget_elmentor_text_link ); ?>
+                            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                <?php endif; ?>
             </div>
         </div>
 
@@ -209,6 +254,18 @@ class iweb_widget_introduces extends Widget_Base {
                 <div class="element-introduces__content">
                     {{{ settings.widget_description }}}
                 </div>
+
+                <#
+                if ( settings.text_link != '' ) {
+
+                    var target = settings.link.is_external ? 'target="_blank"' : '';
+
+                #>
+                    <a class="element-introduces__text--link" href="{{ settings.link.url }}" title="{{{ settings.text_link }}}" {{ target }}>
+                        {{{ settings.text_link }}}
+                        <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                    </a>
+                <# } #>
             </div>
         </div>
 

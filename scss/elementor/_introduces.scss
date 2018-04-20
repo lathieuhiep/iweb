@@ -9,3 +9,14 @@
 .element-introduces__title {
   margin-bottom: 18px;
 }
+.element-introduces__text--link {
+  a {
+    display: inline-block;
+    margin-top: 15px;
+    color: $color-hover;
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+}
