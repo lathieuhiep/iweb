@@ -128,6 +128,37 @@ class iweb_widget_template extends Widget_Base {
 
         $this->end_controls_section();
 
+        $this->start_controls_section(
+            'section_button',
+            [
+                'label' => esc_html__( 'Button', 'iweb' ),
+            ]
+        );
+
+        $this->add_control(
+            'text_button',
+            [
+                'label'         =>  esc_html__( 'Text Button', 'iweb' ),
+                'type'          =>  Controls_Manager::TEXT,
+                'default'       =>  esc_html__( 'Xem thêm', 'iweb' ),
+            ]
+        );
+
+        $this->add_control(
+            'link',
+            [
+                'label'     =>  esc_html__( 'Button Link', 'iweb' ),
+                'type'      =>  Controls_Manager::URL,
+                'default'   =>  [
+                    'url'           =>  'http://',
+                    'is_external'   =>  '',
+                ],
+                'show_external' => true, // Show the 'open in new tab' button.
+            ]
+        );
+
+        $this->end_controls_section();
+
     }
 
     protected function render() {
@@ -138,6 +169,12 @@ class iweb_widget_template extends Widget_Base {
         $iweb_widget_elmentor_limit         =   $iweb_widget_elmentor_settings['template_limit'];
         $iweb_widget_elmentor_order_by      =   $iweb_widget_elmentor_settings['template_order_by'];
         $iweb_widget_elmentor_order         =   $iweb_widget_elmentor_settings['template_order'];
+
+
+        $iweb_widget_elmentor_btn_text          =   $iweb_widget_elmentor_settings['text_button'];
+        $iweb_widget_elmentor_btn_link          =   $iweb_widget_elmentor_settings['link'];
+        $iweb_widget_elmentor_btn_link_url      =   $iweb_widget_elmentor_btn_link['url'];
+        $iweb_widget_elmentor_btn_link_target   =   $iweb_widget_elmentor_btn_link['is_external'] ? 'target="_blank"' : '';
 
         if ( $iweb_widget_elmentor_col_number == 4 ) :
             $iweb_widget_elmentor_class_col =   'col-12 col-sm-6 col-md-3 col-lg-4 col-xl-3';
@@ -250,9 +287,11 @@ class iweb_widget_template extends Widget_Base {
 
                             <div class="element-template__col <?php echo esc_attr( $iweb_widget_elmentor_class_col ); ?>">
                                 <div class="element-template__item">
-                                    <div class="element-template__image-demo">
-                                        <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">&nbsp;</a>
+                                    <a class="d-flex align-items-center justify-content-center" href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
+                                        <i class="fa fa-search" aria-hidden="true"></i>
+                                    </a>
 
+                                    <div class="element-template__image-demo">
                                         <?php the_post_thumbnail( 'full' ); ?>
                                     </div>
 
@@ -269,6 +308,14 @@ class iweb_widget_template extends Widget_Base {
                         ?>
 
                     </div>
+
+                    <?php if ( !empty( $iweb_widget_elmentor_btn_text ) ) : ?>
+                        <div class="element-template__btn--link text-center">
+                            <a href="<?php echo esc_url( $iweb_widget_elmentor_btn_link_url ); ?>" title="<?php echo esc_attr( $iweb_widget_elmentor_btn_text ); ?>" <?php echo esc_attr( $iweb_widget_elmentor_btn_link_target ); ?>>
+                                <?php echo esc_html( $iweb_widget_elmentor_btn_text ); ?>
+                            </a>
+                        </div>
+                    <?php endif; ?>
                 </div>
 
             <?php endif; ?>
@@ -276,19 +323,6 @@ class iweb_widget_template extends Widget_Base {
 
     <?php
 
-    }
-
-    protected function _content_template() {
-
-    ?>
-
-        <div class="element-template">
-            <h2 class="element-template__title element-title text-center text-uppercase">
-                {{{ settings.template_title }}}
-            </h2>
-        </div>
-
-    <?php
     }
 
 }
