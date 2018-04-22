@@ -1623,6 +1623,12 @@ aside.widget_rss ul li .rssSummary {
 /**
 # Responsive
 -----------------------------------------------------------------------------*/
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1200px;
+  }
+}
+
 @media (min-width: 768px) {
   .element-introduces__icon {
     padding-right: 15px;
