@@ -84,7 +84,7 @@ a:hover {
 }
 
 p {
-  margin: 0 0 30px;
+  margin: 0 0 15px;
 }
 
 p:last-child {
@@ -165,6 +165,21 @@ pre {
 
 #back-top:hover {
   background-color: #333333;
+}
+
+.site-social {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-social li {
+  display: inline-block;
+}
+
+.site-social li a {
+  display: block;
+  text-align: center;
 }
 
 /* =WordPress Core
@@ -497,36 +512,33 @@ form.post-password-form p input[type='submit'] {
   content: "\f095";
 }
 
-.site-social {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+.information .site-social {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: flex-end;
   justify-content: flex-end;
 }
 
-.site-social li {
-  display: inline-block;
-}
-
-.site-social li a {
-  display: block;
-  text-align: center;
+.information .site-social li a {
   width: 32px;
   line-height: 32px;
   border-right: 1px solid #eeeeee;
 }
 
-.site-social li a:first-child {
+.information .site-social li a:first-child {
   border-left: 1px solid #eeeeee;
 }
 
-.site-social li a:hover {
+.information .site-social li a:hover {
   color: #fff;
   background: #ff5555;
   border-color: #ff5555;
 }
 
-.site-social li a:hover i.fa {
+.information .site-social li a:hover i.fa {
   -webkit-animation: toTopFromBottom 0.4s forwards;
   -moz-animation: toTopFromBottom 0.4s forwards;
   animation: toTopFromBottom 0.4s forwards;
@@ -832,10 +844,6 @@ aside ul li a {
   display: block;
 }
 
-aside ul li a:hover {
-  padding-left: 10px;
-}
-
 aside ul li ul.children {
   padding-left: 15px;
 }
@@ -902,6 +910,30 @@ aside.widget_rss ul li {
 
 aside.widget_rss ul li .rssSummary {
   font-size: 12px;
+}
+
+aside .social-widget ul li {
+  padding: 0;
+  margin-right: 10px;
+}
+
+aside .social-widget ul li:last-child {
+  margin-right: 0;
+}
+
+aside .social-widget ul li a {
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  background-color: #7b858e;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+
+aside .social-widget ul li a:hover {
+  background-color: #ff5555;
+  color: #ffffff;
 }
 
 .search-form {
@@ -1575,8 +1607,30 @@ aside.widget_rss ul li .rssSummary {
 # Footer
 -----------------------------------------------------------------------------*/
 .site-footer {
-  border-top: 2px solid #eeeeee;
+  background-color: #333333;
   padding-bottom: 10px;
+  color: #ffffff;
+}
+
+.site-footer aside .widget-title {
+  color: #ffffff;
+}
+
+.site-footer aside ul li {
+  padding-top: 0;
+  border: none;
+}
+
+.site-footer aside ul li a {
+  color: #ffffff;
+}
+
+.site-footer aside ul li a:hover {
+  color: #ff5555;
+}
+
+.site-footer aside .social-widget ul li a:hover {
+  color: #ffffff;
 }
 
 .site-footer__top {
@@ -1584,8 +1638,17 @@ aside.widget_rss ul li .rssSummary {
 }
 
 /* Footer Bottom */
+.site-footer__bottom {
+  border-top: 1px solid #dadada;
+}
+
+.site-copyright {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
 .site-copyright-menu {
-  border-top: 1px solid #eeeeee;
   padding-top: 15px;
 }
 

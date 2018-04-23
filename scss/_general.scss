@@ -36,7 +36,7 @@ a {
   }
 }
 p {
-  margin: 0 0 30px;
+  margin: 0 0 15px;
 
   &:last-child {
     margin-bottom: 0;
@@ -106,5 +106,19 @@ pre {
   }
   &:hover {
     background-color: $background-primary;
+  }
+}
+.site-social {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    display: inline-block;
+
+    a {
+      display: block;
+      text-align: center;
+    }
   }
 }

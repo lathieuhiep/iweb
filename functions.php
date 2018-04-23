@@ -108,8 +108,13 @@ if ( class_exists('Woocommerce') ) :
 endif;
 
 /* Require Post Type */
-foreach(glob( get_parent_theme_file_path( '/extension/post-type/*.php' ) ) as $file){
-    require $file;
+foreach(glob( get_parent_theme_file_path( '/extension/post-type/*.php' ) ) as $iweb_file_post_type ) {
+    require $iweb_file_post_type;
+}
+
+/* Require Widgets */
+foreach(glob( get_parent_theme_file_path( '/extension/widgets/*.php' ) ) as $iweb_file_widgets ) {
+    require $iweb_file_widgets;
 }
 
 /**
@@ -537,7 +542,7 @@ function iweb_get_social_url() {
 
 ?>
 
-    <ul class="site-social d-flex">
+    <ul class="site-social">
 
         <?php
         foreach( $iweb_social_networks as $iweb_social ) :
