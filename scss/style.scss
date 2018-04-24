@@ -22,6 +22,8 @@
   ## Single
   ## Pagination
   ## Comment
+# Post Type
+  ## Template
 ## Shop Woocommerce
 ## Elementor
   ## Introduces
@@ -58,6 +60,11 @@
 # Blog
 -----------------------------------------------------------------------------*/
 @import "blog/blog";
+
+/**
+# Post Type
+-----------------------------------------------------------------------------*/
+@import "post-type/template";
 
 /**
 # Shop Woocommerce
