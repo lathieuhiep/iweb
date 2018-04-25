@@ -292,7 +292,7 @@ class iweb_widget_template extends Widget_Base {
                                     </a>
 
                                     <div class="element-template__image-demo">
-                                        <?php the_post_thumbnail( 'full' ); ?>
+                                        <?php the_post_thumbnail( 'medium_large' ); ?>
                                     </div>
 
                                     <h3 class="element-template__title-demo">

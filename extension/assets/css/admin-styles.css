@@ -292,6 +292,10 @@
 }
 
 /* metabox option */
+.rwmb-meta-box .rwmb-field:not(:last-of-type) {
+    margin-bottom: 25px;
+}
+
 #univn_option_template_home {
     display: none;
 }

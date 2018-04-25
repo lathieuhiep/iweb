@@ -22,7 +22,7 @@
   ## Pagination
   ## Comment
 # Post Type
-  ## Template
+  ## Single Template
 ## Shop Woocommerce
 ## Elementor
   ## Introduces
@@ -1257,13 +1257,59 @@ aside .social-widget ul li a:hover {
 /**
 # Post Type
 -----------------------------------------------------------------------------*/
-/* Template */
+/* Single Template */
 .post-template__item--title {
   font-size: 23px;
   border-bottom: 1px solid #dddddd;
   padding-bottom: 15px;
-  margin-bottom: 15px;
+  margin-bottom: 45px;
   width: 100%;
+}
+
+.post-template__box--button {
+  margin-bottom: 30px;
+}
+
+.post-template__box--button a {
+  position: relative;
+  display: inline-block;
+  color: #ffffff;
+  padding: 8px 15px;
+  background-color: #333333;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+
+.post-template__box--button a:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #ff5555;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transform-origin: 0 50%;
+  transform-origin: 0 50%;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+
+.post-template__box--button a:hover:before {
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
 }
 
 /**
@@ -1487,7 +1533,6 @@ aside .social-widget ul li a:hover {
 
 .elementor .element-template__image-demo img {
   width: 100%;
-  height: 100%;
 }
 
 .element-template__btn--cat {
@@ -1580,11 +1625,7 @@ aside .social-widget ul li a:hover {
 .element-template__image-demo {
   height: 325px;
   margin-bottom: 15px;
-}
-
-.element-template__image-demo img {
-  -o-object-fit: cover;
-  object-fit: cover;
+  overflow: hidden;
 }
 
 .element-template__title-demo {
