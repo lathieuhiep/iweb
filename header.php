@@ -17,8 +17,8 @@
 <!--Include Loading Template-->
 <?php
 
-get_template_part('template-parts/inc','loading');
-get_template_part('template-parts/header/inc','menu');
+get_template_part( 'template-parts/inc','loading' );
+get_template_part( 'template-parts/header/inc','menu' );
 
 ?>
 <!--End Loading Template-->

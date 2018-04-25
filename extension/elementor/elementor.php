@@ -2,6 +2,10 @@
 
 namespace Elementor;
 
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
+
 class iweb_plugin_elementor_widgets {
 
     /**

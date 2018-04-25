@@ -1,5 +1,9 @@
+<?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 
-<?php if( is_active_sidebar("iweb-sidebar") ): ?>
+if( is_active_sidebar("iweb-sidebar") ):
+
+?>
 
     <div class="tz-sidebar col-md-3">
         <?php dynamic_sidebar("iweb-sidebar"); ?>

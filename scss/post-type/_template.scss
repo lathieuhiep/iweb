@@ -29,8 +29,7 @@
       bottom: 0;
       background: $background-hover;
       @include border-radius(3px);
-      -webkit-transform: scaleX(0);
-      transform: scaleX(0);
+      @include transform(scaleX(0));
       -webkit-transform-origin: 0 50%;
       transform-origin: 0 50%;
       -webkit-transition-property: transform;
@@ -42,9 +41,58 @@
     }
     &:hover {
       &:before {
-        -webkit-transform: scaleX(1);
-        transform: scaleX(1);
+        @include transform(scaleX(1));
       }
     }
   }
+}
+.post-template__box--meta,
+.relate-template-warp {
+  margin-top: 30px;
+}
+.post-template__box--meta__title {
+  font-size: 18px;
+  margin-bottom: 15px;
+  text-decoration: underline;
+  color: $color-hover
+}
+.post-template__box--meta__tag a {
+  display: inline-block;
+  border: 1px solid $color-hover;
+  margin-bottom: 12px;
+  padding: 6px 8px;
+  text-transform: capitalize;
+  @include border-radius(3px);
+
+  &:hover {
+    color: #ffffff;
+    background-color: $color-hover;
+  }
+}
+.post-template__box--description {
+  margin-top: 30px;
+}
+.post-template__box--description__title,
+.relate-template__title {
+  font-size: 23px;
+  margin-bottom: 30px;
+  text-decoration: underline;
+  color: $color-hover;
+}
+.post-template__box--description__content {
+  text-align: justify;
+}
+.relate-template__item {
+  border: 1px solid $border-color;
+  padding: 15px;
+}
+.relate-template__item--image {
+  margin-bottom: 15px;
+}
+.relate-template__item--title {
+  font-size: 16px;
+  margin-bottom: 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }

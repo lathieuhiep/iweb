@@ -22,7 +22,7 @@
         /* End back top */
 
         /* btn mobile Start*/
-        var $menu_item_has_children =   $( '.site-menu .menu-item-has-children' );
+        let $menu_item_has_children =   $( '.site-menu .menu-item-has-children' );
 
         if ( $menu_item_has_children.length ) {
 
@@ -47,7 +47,7 @@
         /* btn mobile End */
 
         /* Start Gallery Single */
-        var $site_post_slides   =   $( '.site-post-slides' );
+        let $site_post_slides   =   $( '.site-post-slides' );
 
         if ( $site_post_slides.length ) {
 
@@ -68,6 +68,10 @@
         }
         /* End Gallery Single */
 
+        /* Start element slides blog  */
+        general_multi_owlCarouse( '.relate-template__box', 'settings' );
+        /* End element slides blog  */
+
     });
 
     $( window ).on( "load", function() {
@@ -76,7 +80,7 @@
 
     });
 
-    var timer_clear;
+    let timer_clear;
 
     $(window).scroll(function(){
 
@@ -97,5 +101,63 @@
         }, 100);
 
     });
+
+    /* Start function multi owlCarouse */
+    function general_multi_owlCarouse( class_item, settings ) {
+
+        let class_item_owlCarousel   =   $( class_item );
+
+        if ( class_item_owlCarousel.length ) {
+
+            class_item_owlCarousel.each(function(){
+
+                let $settings_slider    =   $(this).data( settings ),
+                    $item_number        =   parseInt( $settings_slider['number_item'] ),
+                    $margin_item        =   parseInt( $settings_slider['margin_item'] ),
+                    $loop_slider        =   $settings_slider['loop'],
+                    $autoplay           =   $settings_slider['autoplay'],
+                    $active_dots        =   $settings_slider['dots'],
+                    $active_nav         =   $settings_slider['nav'],
+                    $item_mobile        =   $settings_slider['item_mobile'],
+                    $margin_item_mobile =   $settings_slider['margin_item_mobile'],
+                    $item_tablet        =   $settings_slider['item_tablet'];
+
+                $( this ).owlCarousel({
+
+                    loop: $loop_slider,
+                    autoplay: $autoplay,
+                    margin: $margin_item,
+                    nav: $active_nav,
+                    navText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>','<i class="fa fa-angle-right" aria-hidden="true"></i>'],
+                    dots: $active_dots,
+                    rtl: false,
+                    autoplaySpeed: 800,
+                    navSpeed: 800,
+                    dotsSpeed: 800,
+                    autoHeight:true,
+                    responsive:{
+                        0:{
+                            items: $item_mobile,
+                            margin: $margin_item_mobile
+                        },
+                        576:{
+                            items:2
+                        },
+                        768:{
+                            items: $item_tablet
+                        },
+                        1200:{
+                            items:$item_number
+                        }
+                    }
+
+                });
+
+            });
+
+        }
+
+    }
+    /* End function multi owlCarouse */
 
 } )( jQuery );
