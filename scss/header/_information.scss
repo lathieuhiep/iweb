@@ -62,9 +62,6 @@
         line-height: 32px;
         border-right: 1px solid $border-color;
 
-        &:first-child {
-          border-left: 1px solid $border-color;
-        }
         &:hover {
           color: #fff;
           background: $background-hover;
@@ -75,6 +72,11 @@
             -moz-animation: toTopFromBottom 0.4s forwards;
             animation: toTopFromBottom 0.4s forwards;
           }
+        }
+      }
+      &:first-child {
+        a {
+          border-left: 1px solid $border-color;
         }
       }
     }

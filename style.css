@@ -530,10 +530,6 @@ form.post-password-form p input[type='submit'] {
   border-right: 1px solid #dddddd;
 }
 
-.information .site-social li a:first-child {
-  border-left: 1px solid #dddddd;
-}
-
 .information .site-social li a:hover {
   color: #fff;
   background: #ff5555;
@@ -544,6 +540,10 @@ form.post-password-form p input[type='submit'] {
   -webkit-animation: toTopFromBottom 0.4s forwards;
   -moz-animation: toTopFromBottom 0.4s forwards;
   animation: toTopFromBottom 0.4s forwards;
+}
+
+.information .site-social li:first-child a {
+  border-left: 1px solid #dddddd;
 }
 
 @-webkit-keyframes toTopFromBottom {
@@ -1257,6 +1257,12 @@ aside .social-widget ul li a:hover {
 /**
 # Post Type
 -----------------------------------------------------------------------------*/
+/* Taxonomy Template */
+.page-taxonomy-template--title {
+  font-size: 20px;
+  color: #ff5555;
+}
+
 /* Single Template */
 .post-template__item--title {
   font-size: 23px;
@@ -1264,6 +1270,10 @@ aside .social-widget ul li a:hover {
   padding-bottom: 15px;
   margin-bottom: 45px;
   width: 100%;
+}
+
+.post-template__box--cat {
+  margin-bottom: 30px;
 }
 
 .post-template__box--button {
@@ -1635,7 +1645,7 @@ aside .social-widget ul li a:hover {
   transition: all 0.4s ease-in-out;
 }
 
-.element-template__item a {
+.element-template__item > a {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -1645,7 +1655,7 @@ aside .social-widget ul li a:hover {
   z-index: 1;
 }
 
-.element-template__item a i.fa {
+.element-template__item > a i.fa {
   position: relative;
   opacity: 0;
   color: #ffffff;
@@ -1656,7 +1666,7 @@ aside .social-widget ul li a:hover {
   transition: all 0.4s ease-in-out;
 }
 
-.element-template__item a:after {
+.element-template__item > a:after {
   position: absolute;
   content: '';
   background-color: rgba(0, 0, 0, 0.5);
@@ -1685,7 +1695,7 @@ aside .social-widget ul li a:hover {
   opacity: 1;
 }
 
-.element-template__item:hover .element-template__title-demo {
+.element-template__item:hover .element-template__title-demo a {
   color: #ffffff;
 }
 

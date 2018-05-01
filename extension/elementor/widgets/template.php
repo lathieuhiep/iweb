@@ -163,13 +163,12 @@ class iweb_widget_template extends Widget_Base {
 
     protected function render() {
 
-        $iweb_widget_elmentor_settings      =   $this->get_settings();
-        $iweb_widget_elmentor_col_number    =   $iweb_widget_elmentor_settings['template_column_number'];
-        $iweb_widget_elmentor_cat_select    =   $iweb_widget_elmentor_settings['template_select_cat'];
-        $iweb_widget_elmentor_limit         =   $iweb_widget_elmentor_settings['template_limit'];
-        $iweb_widget_elmentor_order_by      =   $iweb_widget_elmentor_settings['template_order_by'];
-        $iweb_widget_elmentor_order         =   $iweb_widget_elmentor_settings['template_order'];
-
+        $iweb_widget_elmentor_settings          =   $this->get_settings();
+        $iweb_widget_elmentor_col_number        =   $iweb_widget_elmentor_settings['template_column_number'];
+        $iweb_widget_elmentor_cat_select        =   $iweb_widget_elmentor_settings['template_select_cat'];
+        $iweb_widget_elmentor_limit             =   $iweb_widget_elmentor_settings['template_limit'];
+        $iweb_widget_elmentor_order_by          =   $iweb_widget_elmentor_settings['template_order_by'];
+        $iweb_widget_elmentor_order             =   $iweb_widget_elmentor_settings['template_order'];
 
         $iweb_widget_elmentor_btn_text          =   $iweb_widget_elmentor_settings['text_button'];
         $iweb_widget_elmentor_btn_link          =   $iweb_widget_elmentor_settings['link'];
@@ -283,26 +282,9 @@ class iweb_widget_template extends Widget_Base {
                         <?php
                         while ( $iweb_widget_template_query -> have_posts() ) :
                             $iweb_widget_template_query -> the_post();
-                        ?>
 
-                            <div class="element-template__col <?php echo esc_attr( $iweb_widget_elmentor_class_col ); ?>">
-                                <div class="element-template__item">
-                                    <a class="d-flex align-items-center justify-content-center" href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
-                                        <i class="fa fa-search" aria-hidden="true"></i>
-                                    </a>
+                            do_action( 'iweb_template_loop', $iweb_widget_elmentor_class_col );
 
-                                    <div class="element-template__image-demo">
-                                        <?php the_post_thumbnail( 'medium_large' ); ?>
-                                    </div>
-
-                                    <h3 class="element-template__title-demo">
-                                        <?php the_title(); ?>
-                                    </h3>
-                                </div>
-
-                            </div>
-
-                        <?php
                         endwhile;
                         wp_reset_postdata();
                         ?>

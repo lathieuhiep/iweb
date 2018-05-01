@@ -1,3 +1,8 @@
+/* Taxonomy Template */
+.page-taxonomy-template--title {
+  font-size: 20px;
+  color: $color-hover;
+}
 /* Single Template */
 .post-template__item--title {
   font-size: 23px;
@@ -5,6 +10,9 @@
   padding-bottom: 15px;
   margin-bottom: 45px;
   width: 100%;
+}
+.post-template__box--cat {
+  margin-bottom: 30px;
 }
 .post-template__box--button {
   margin-bottom: 30px;

@@ -19,6 +19,20 @@ $iweb_meta_box_template_description =   rwmb_meta( 'iweb_meta_box_template_descr
             </div>
 
             <div class="col-md-4">
+                <?php if ( has_term( '', 'template_cat' ) ) : ?>
+
+                    <div class="post-template__box--cat">
+                        <h3 class="post-template__box--meta__title">
+                            <?php esc_html_e( 'Gói dịch vụ', 'iweb' ); ?>
+                        </h3>
+
+                        <div class="post-template__box--cat__item">
+                            <?php the_terms( get_the_ID(), 'template_cat', '', ', ' ); ?>
+                        </div>
+                    </div>
+
+                <?php endif; ?>
+
                 <div class="post-template__box--button">
                     <a class="btn-link-demo" href="<?php echo esc_url( $iweb_meta_box_template_link_demo ); ?>" title="<?php the_title(); ?>">
                         <?php esc_html_e( 'Xem Demo', 'iweb' ); ?>
