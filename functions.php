@@ -636,3 +636,24 @@ function iweb_check_get_cat( $iweb_check_type_taxonomy ) {
 
 }
 /* End get Category check box */
+
+/* Start footer */
+function iweb_google_analytics() {
+?>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-118802207-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-118802207-1');
+    </script>
+
+<?php
+}
+
+add_action( 'wp_footer', 'iweb_google_analytics' );
+
+/* End footer */
