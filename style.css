@@ -24,6 +24,7 @@
 # Post Type
   ## Single Template
 ## Shop Woocommerce
+## Contact Form 7
 ## Elementor
   ## Introduces
 # Footer
@@ -1541,6 +1542,13 @@ aside .social-widget ul li a:hover {
 
 .pswp__bg {
   background-color: rgba(0, 0, 0, 0.9);
+}
+
+/**
+# Contact Form 7
+-----------------------------------------------------------------------------*/
+form.wpcf7-form span.wpcf7-form-control-wrap {
+  display: block;
 }
 
 /**

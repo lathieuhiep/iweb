@@ -1,0 +1,9 @@
+form {
+  &.wpcf7-form {
+    span {
+      &.wpcf7-form-control-wrap {
+        display: block;
+      }
+    }
+  }
+}

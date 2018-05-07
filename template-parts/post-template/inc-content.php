@@ -41,11 +41,17 @@ $iweb_meta_box_template_description =   rwmb_meta( 'iweb_meta_box_template_descr
                         <?php esc_html_e( 'Xem Demo', 'iweb' ); ?>
                     </a>
 
-                    <a id="btn-add-cart-template" href="#" title="<?php esc_attr_e( 'Đặt hàng', 'iweb' ); ?>">
-                        <?php esc_html_e( 'Đặt Hàng', 'iweb' ); ?>
-                    </a>
+                    <?php if ( !empty( $iweb_template_single_cf ) ) : ?>
 
-<!--                    --><?php //echo do_shortcode( '[contact-form-7 id="'.esc_attr( $iweb_template_single_cf ).'"]' ); ?>
+                        <a id="btn-add-cart-template" href="#" title="<?php esc_attr_e( 'Đặt hàng', 'iweb' ); ?>">
+                            <?php esc_html_e( 'Đặt Hàng', 'iweb' ); ?>
+                        </a>
+
+                        <div class="post-template__box--cf">
+                            <?php echo do_shortcode( '[contact-form-7 id="'.esc_attr( $iweb_template_single_cf ).'"]' ); ?>
+                        </div>
+
+                    <?php endif; ?>
                 </div>
 
                 <div class="post-template__box--content">
