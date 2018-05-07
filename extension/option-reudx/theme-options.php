@@ -266,6 +266,7 @@ Redux::setSection( $iweb_opt_name, array(
     'desc'          =>  esc_html__( '', 'iweb' ),
     'subsection'    =>  true,
     'fields'        =>  array(
+
         array(
             'id'        =>  'iweb_type_logo',
             'type'      =>  'select',
@@ -556,8 +557,6 @@ Redux::setSection( $iweb_opt_name, array(
 Redux::setSection( $iweb_opt_name, array(
     'title'         =>  esc_html__( 'Blog Single', 'iweb' ),
     'id'            =>  'iweb_blog_single',
-    'desc'          =>  esc_html__( '', 'iweb' ),
-    'subsection'    =>  true,
     'fields'        =>  array(
 
         array(
@@ -588,6 +587,25 @@ Redux::setSection( $iweb_opt_name, array(
     )
 ));
 /* End Blog Single */
+
+/* Start Template Single */
+Redux::setSection( $iweb_opt_name, array(
+    'title'         =>  esc_html__( 'Template Single', 'iweb' ),
+    'id'            =>  'iweb_template_single',
+    'icon'          =>  'el el-th',
+    'fields'        =>  array(
+
+        array(
+            'id'        =>  'iweb_template_single_cf',
+            'type'      =>  'select',
+            'title'     =>  esc_html__( 'Select Contact Form', 'iweb' ),
+            'default'   =>  '',
+            'options'   =>  iweb_get_shortcode_cf7()
+        ),
+
+    )
+));
+/* End Template Single */
 
 /* Start 404 Options */
 Redux::setSection( $iweb_opt_name, array(

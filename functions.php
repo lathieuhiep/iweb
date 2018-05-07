@@ -512,6 +512,13 @@ function iweb_register_required_plugins() {
             'required'  =>  true,
         ),
 
+        // This is an example of how to include a plugin from the WordPress Plugin Repository
+        array(
+            'name'      =>  'Contact Form 7',
+            'slug'      =>  'contact-form-7',
+            'required'  =>  true,
+        ),
+
     );
 
     /**
@@ -636,6 +643,32 @@ function iweb_check_get_cat( $iweb_check_type_taxonomy ) {
 
 }
 /* End get Category check box */
+
+/* Start Get contact form */
+function iweb_get_shortcode_cf7() {
+
+    $iweb_get_query_cf7 = get_posts( 'post_type="wpcf7_contact_form"&numberposts=-1' );
+
+    $iweb_contact_forms = array();
+
+    if ( $iweb_get_query_cf7 ) :
+
+        foreach ( $iweb_get_query_cf7 as $iweb_get_cf7_item ) :
+
+            $iweb_contact_forms[$iweb_get_cf7_item->ID] = $iweb_get_cf7_item->post_title;
+
+        endforeach;
+
+    else :
+
+        $iweb_contact_forms[''] = esc_html__( 'No contact forms found', 'iweb' );
+
+    endif;
+
+    return $iweb_contact_forms;
+
+}
+/* End Get contact form */
 
 /* Start footer */
 function iweb_google_analytics() {
