@@ -1,8 +1,27 @@
 form {
   &.wpcf7-form {
+    label {
+      display: block;
+      margin: 0;
+    }
     span {
+      &.cf-required {
+        color: $color-hover;
+      }
       &.wpcf7-form-control-wrap {
         display: block;
+        margin-top: 5px;
+
+        input,
+        textarea {
+          width: 100%;
+          margin: 0;
+          padding: 8px 10px;
+          border: 1px solid $border-color;
+        }
+        textarea {
+          height: 150px;
+        }
       }
     }
   }

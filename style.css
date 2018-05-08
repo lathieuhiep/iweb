@@ -1547,8 +1547,30 @@ aside .social-widget ul li a:hover {
 /**
 # Contact Form 7
 -----------------------------------------------------------------------------*/
+form.wpcf7-form label {
+  display: block;
+  margin: 0;
+}
+
+form.wpcf7-form span.cf-required {
+  color: #ff5555;
+}
+
 form.wpcf7-form span.wpcf7-form-control-wrap {
   display: block;
+  margin-top: 5px;
+}
+
+form.wpcf7-form span.wpcf7-form-control-wrap input,
+form.wpcf7-form span.wpcf7-form-control-wrap textarea {
+  width: 100%;
+  margin: 0;
+  padding: 8px 10px;
+  border: 1px solid #dddddd;
+}
+
+form.wpcf7-form span.wpcf7-form-control-wrap textarea {
+  height: 150px;
 }
 
 /**
