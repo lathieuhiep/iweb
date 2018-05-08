@@ -48,11 +48,19 @@ $iweb_meta_box_template_description =   rwmb_meta( 'iweb_meta_box_template_descr
                         </a>
 
                         <div class="post-template__box--cf">
-                            <h3 class="title-contact-template text-center">
-                                <?php esc_html_e( 'Đặt hàng: ', 'iweb' ); the_title(); ?>
-                            </h3>
+                            <div class="template-contact-overlay"></div>
 
-                            <?php echo do_shortcode( '[contact-form-7 id="'.esc_attr( $iweb_template_single_cf ).'"]' ); ?>
+                            <div class="template-contact-box">
+                                <span id="template-contact-close">
+                                    <i class="fa fa-close" aria-hidden="true"></i>
+                                </span>
+
+                                <h3 class="title-contact-template text-center">
+                                    <?php esc_html_e( 'Đặt hàng: ', 'iweb' ); the_title(); ?>
+                                </h3>
+
+                                <?php echo do_shortcode( '[contact-form-7 id="'.esc_attr( $iweb_template_single_cf ).'"]' ); ?>
+                            </div>
                         </div>
 
                     <?php endif; ?>
