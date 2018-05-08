@@ -1399,6 +1399,11 @@ aside .social-widget ul li a:hover {
   overflow: hidden;
 }
 
+.title-contact-template {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
 /**
 # Shop Woocommerce
 -----------------------------------------------------------------------------*/
@@ -1552,6 +1557,12 @@ form.wpcf7-form label {
   margin: 0;
 }
 
+form.wpcf7-form label.hide-label {
+  opacity: 0;
+  visibility: hidden;
+  height: 0;
+}
+
 form.wpcf7-form span.cf-required {
   color: #ff5555;
 }
@@ -1571,6 +1582,22 @@ form.wpcf7-form span.wpcf7-form-control-wrap textarea {
 
 form.wpcf7-form span.wpcf7-form-control-wrap textarea {
   height: 150px;
+}
+
+form.wpcf7-form input[type="submit"] {
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  padding: 8px 30px;
+  background-color: #333333;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+form.wpcf7-form input[type="submit"]:hover {
+  background-color: #ff5555;
 }
 
 /**

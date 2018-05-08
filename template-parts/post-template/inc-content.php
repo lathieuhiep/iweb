@@ -43,11 +43,15 @@ $iweb_meta_box_template_description =   rwmb_meta( 'iweb_meta_box_template_descr
 
                     <?php if ( !empty( $iweb_template_single_cf ) ) : ?>
 
-                        <a id="btn-add-cart-template" href="#" title="<?php esc_attr_e( 'Đặt hàng', 'iweb' ); ?>">
+                        <a id="btn-add-cart-template" href="#" title="<?php esc_attr_e( 'Đặt hàng', 'iweb' ); ?>" data-title-item="<?php the_title(); ?>">
                             <?php esc_html_e( 'Đặt Hàng', 'iweb' ); ?>
                         </a>
 
                         <div class="post-template__box--cf">
+                            <h3 class="title-contact-template text-center">
+                                <?php esc_html_e( 'Đặt hàng: ', 'iweb' ); the_title(); ?>
+                            </h3>
+
                             <?php echo do_shortcode( '[contact-form-7 id="'.esc_attr( $iweb_template_single_cf ).'"]' ); ?>
                         </div>
 

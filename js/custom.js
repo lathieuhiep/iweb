@@ -11,14 +11,14 @@
     $( document ).ready( function () {
 
         /* Start back top */
-        $('#back-top').click( function(e) {
+        $('#back-top').on( 'click', function ( e ) {
 
             e.preventDefault();
-            $( 'html, body' ).animate({
+            $( 'html, body' ).animate( {
                 scrollTop: 0
-            },700);
+            }, 700 );
 
-        });
+        } );
         /* End back top */
 
         /* btn mobile Start*/
@@ -28,7 +28,7 @@
 
             $('.site-menu .menu-item-has-children > a').after( "<span class='icon_menu_item_mobile'></span>" );
 
-            var $icon_menu_item_mobile  =   $('.icon_menu_item_mobile');
+            let $icon_menu_item_mobile  =   $('.icon_menu_item_mobile');
 
             $icon_menu_item_mobile.each(function () {
 
@@ -72,6 +72,23 @@
         general_multi_owlCarouse( '.relate-template__box', 'settings' );
         /* End element slides blog  */
 
+        /* Start button cart template */
+        let btn_add_cart_template   =   $( '#btn-add-cart-template' );
+
+        if ( btn_add_cart_template.length ) {
+
+            btn_add_cart_template.on( 'click', function (e) {
+
+                e.preventDefault();
+
+                let title_item_template =   $(this).data( 'title-item' );
+                $(this).parents( '.post-template__box--button' ).find( 'form.wpcf7-form input#title-item-template-cf' ).val( title_item_template );
+
+            } )
+
+        }
+        /* End button cart template */
+
     });
 
     $( window ).on( "load", function() {
@@ -89,7 +106,7 @@
         timer_clear = setTimeout(function(){
 
             /* Start scroll back top */
-            var $scrollTop = $(this).scrollTop();
+            let $scrollTop = $(this).scrollTop();
 
             if ( $scrollTop > 200 ) {
                 $('#back-top').addClass('active_top');

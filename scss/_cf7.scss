@@ -3,6 +3,12 @@ form {
     label {
       display: block;
       margin: 0;
+
+      &.hide-label {
+        opacity: 0;
+        visibility: hidden;
+        height: 0;
+      }
     }
     span {
       &.cf-required {
@@ -22,6 +28,18 @@ form {
         textarea {
           height: 150px;
         }
+      }
+    }
+    input[type="submit"] {
+      color: #ffffff;
+      border: none;
+      cursor: pointer;
+      padding: 8px 30px;
+      background-color: $background-primary;
+      @include transition(all 0.4s ease-in-out);
+
+      &:hover {
+        background-color: $background-hover;
       }
     }
   }
